@@ -11,9 +11,7 @@ class User_model extends CI_Model
 
     public function AddInfo($values)
     {
-        
         $query = $this->db->insert('schedule', $values);
-        file_put_contents("2.txt", $query);
         return $query;
     }
     public function FetchInfo()
