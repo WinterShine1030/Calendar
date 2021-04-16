@@ -23,7 +23,6 @@ $(document).ready(function() {
                     data: 'title=' + title + '&start=' + start + '&end=' + end,
                     type: "POST",
                     success: function(data) {
-                        alert(data);
                         if (data == 1) {
                             displayMessage("Added Successfully");
                         }
