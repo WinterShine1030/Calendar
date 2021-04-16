@@ -29,7 +29,21 @@ class Event extends CI_Controller {
     	$info['title'] = isset($_POST['title']) ? $_POST['title'] : "";
 		$info['start'] = isset($_POST['start']) ? $_POST['start'] : "";
 		$info['end'] = isset($_POST['end']) ? $_POST['end'] : "";
-        $result = $this->User_model->loginCheck($info);
+        $result = $this->User_model->AddInfo($info);
         echo $result;   
+    }
+	public function FetchEvent()
+    {
+    	$result = $this->User_model->FetchInfo();
+		echo json_encode($result);
+    }
+	public function DropEvent()
+    {
+    	$info['id'] = $_POST['id'];
+		$info['title'] = $_POST['title'];
+		$info['start'] = $_POST['start'];
+		$info['end'] = $_POST['end'];
+		$result = $this->User_model->DropInfo($info);
+		echo $result;
     }
 }

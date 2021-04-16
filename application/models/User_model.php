@@ -9,28 +9,23 @@ class User_model extends CI_Model
         $this->load->database();
     }
 
-    public function loginCheck($values)
+    public function AddInfo($values)
     {
         
         $query = $this->db->insert('schedule', $values);
         file_put_contents("2.txt", $query);
         return $query;
-        // if ($result->num_rows()==0)
-        // {
-        //     return "no_user";
-        // }
-
-        // $this->db->where('user_name', $username);
-        // $this->db->where('password', $password);
-        // $result = $this->db->get('anas_admin');
-
-        // if ($result->num_rows()==0)
-        // {
-        //     return "wrong_password";
-        // }
-
-        // $status = $result->row_array();
-        // return "ok";
+    }
+    public function FetchInfo()
+    {
+        
+        $query = $this->db->get('schedule');
+         return $query->result_array();
+    }
+    public function DropInfo($values)
+    {
+       $query = $this->db->update('schedule', $values, array('id' => $values['id']));
+       return $query;
     }
 
 }
