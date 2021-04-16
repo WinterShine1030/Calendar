@@ -20,9 +20,9 @@ class Admin extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('header');
-        $this->load->view('calendar');
-        $this->load->view('footer');
+		$this->load->view('Admin/header');
+        $this->load->view('Admin/calendar');
+        $this->load->view('Admin/footer');
 	}
 	
 }

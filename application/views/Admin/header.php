@@ -7,19 +7,19 @@
       <meta name="description" content=""/>
       <meta name="author" content=""/>
       <title>Dashtreme - Multipurpose Bootstrap4 Admin Template</title>
-      <link href="assets/plugins/fullcalendar/css/fullcalendar.css" rel='stylesheet'/>
+      <link href="../assets/plugins/fullcalendar/css/fullcalendar.css" rel='stylesheet'/>
       <!-- simplebar CSS-->
-      <link href="assets/plugins/simplebar/css/simplebar.css" rel="stylesheet"/>
+      <link href="../assets/plugins/simplebar/css/simplebar.css" rel="stylesheet"/>
       <!-- Bootstrap core CSS-->
-      <link href="assets/css/bootstrap.min.css" rel="stylesheet"/>
+      <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
       <!-- animate CSS-->
-      <link href="assets/css/animate.css" rel="stylesheet" type="text/css"/>
+      <link href="../assets/css/animate.css" rel="stylesheet" type="text/css"/>
       <!-- Icons CSS-->
-      <link href="assets/css/icons.css" rel="stylesheet" type="text/css"/>
+      <link href="../assets/css/icons.css" rel="stylesheet" type="text/css"/>
       <!-- Horizontal menu CSS-->
-      <link href="assets/css/horizontal-menu.css" rel="stylesheet"/>
+      <link href="../assets/css/horizontal-menu.css" rel="stylesheet"/>
       <!-- Custom Style-->
-      <link href="assets/css/app-style.css" rel="stylesheet"/>
+      <link href="../assets/css/app-style.css" rel="stylesheet"/>
     </head>
     <style>
 body {
