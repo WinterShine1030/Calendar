@@ -18,7 +18,6 @@ $(document).ready(function() {
             if (title) {
                 var start = $.fullCalendar.formatDate(start, "YYYY-MM-DD HH:mm:ss");
                 var end = $.fullCalendar.formatDate(end, "YYYY-MM-DD HH:mm:ss");
-                alert(start);
                 $.ajax({
                     url: 'index.php/Event/AddEvent',
                     data: 'title=' + title + '&start=' + start + '&end=' + end,
