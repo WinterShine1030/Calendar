@@ -27,5 +27,9 @@ class User_model extends CI_Model
        $query = $this->db->update('schedule', $values, array('id' => $values['id']));
        return $query;
     }
-
+    public function DelInfo($values)
+    {
+        $query = $this->db->delete('schedule', $values);
+        return $query;
+    }
 }

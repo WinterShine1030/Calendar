@@ -46,4 +46,11 @@ class Event extends CI_Controller {
 		$result = $this->User_model->DropInfo($info);
 		echo $result;
     }
+	public function DelEvent()
+    {
+    	$info['id'] = $_POST['id'];
+		$result = $this->User_model->DelInfo($info);
+		echo $result;
+
+    }
 }

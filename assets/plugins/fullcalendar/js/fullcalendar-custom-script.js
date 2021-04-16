@@ -62,7 +62,7 @@ $(document).ready(function() {
             if (deleteMsg) {
                 $.ajax({
                     type: "POST",
-                    url: "delete-event.php",
+                    url: "index.php/Event/DelEvent",
                     data: "&id=" + event.id,
                     success: function(response) {
                         if (parseInt(response) > 0) {
