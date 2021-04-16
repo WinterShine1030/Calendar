@@ -29,6 +29,7 @@ class Event extends CI_Controller {
     	$info['title'] = isset($_POST['title']) ? $_POST['title'] : "";
 		$info['start'] = isset($_POST['start']) ? $_POST['start'] : "";
 		$info['end'] = isset($_POST['end']) ? $_POST['end'] : "";
+		$info['accept'] = 0;
         $result = $this->User_model->AddInfo($info);
         echo $result;   
     }
@@ -43,6 +44,7 @@ class Event extends CI_Controller {
 		$info['title'] = $_POST['title'];
 		$info['start'] = $_POST['start'];
 		$info['end'] = $_POST['end'];
+		$info['accept'] = 0;
 		$result = $this->User_model->DropInfo($info);
 		echo $result;
     }
@@ -52,5 +54,18 @@ class Event extends CI_Controller {
 		$result = $this->User_model->DelInfo($info);
 		echo $result;
 
+    }
+	public function AcceptEvent()
+    {
+    	$info['id'] = $_POST['id'];
+    	$info['accept'] = 1;
+		$result = $this->User_model->AcceptInfo($info);
+		echo $result;
+
+    }
+	public function AdminFetchEvent()
+    {
+    	$result = $this->User_model->AdminFetchInfo();
+		echo json_encode($result);
     }
 }

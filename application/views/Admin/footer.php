@@ -13,6 +13,6 @@
       <!-- Full Calendar --> 
       <script src='../assets/plugins/fullcalendar/js/moment.js'></script>
       <script src='../assets/plugins/fullcalendar/js/fullcalendar.min.js'></script>
-      <script src="../assets/plugins/fullcalendar/js/fullcalendar-custom-script.js"></script>
+      <script src="../assets/plugins/fullcalendar/js/fullcalendar-admin-script.js"></script>
     </body>
 </html>

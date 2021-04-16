@@ -18,7 +18,7 @@ class User_model extends CI_Model
     }
     public function FetchInfo()
     {
-        
+        $this->db->where('accept', 1);
         $query = $this->db->get('schedule');
          return $query->result_array();
     }
@@ -27,9 +27,15 @@ class User_model extends CI_Model
        $query = $this->db->update('schedule', $values, array('id' => $values['id']));
        return $query;
     }
-    public function DelInfo($values)
+    public function AcceptInfo($values)
     {
-        $query = $this->db->delete('schedule', $values);
+        $query = $this->db->update('schedule', $values, array('id' => $values['id']));
         return $query;
+    }
+    public function AdminFetchInfo()
+    {
+        $this->db->where('accept', 0);
+        $query = $this->db->get('schedule');
+         return $query->result_array();
     }
 }

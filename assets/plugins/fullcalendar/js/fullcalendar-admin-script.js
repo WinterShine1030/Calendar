@@ -7,7 +7,7 @@ $(document).ready(function() {
         },
         navLinks: true,
         editable: true,
-        events: "index.php/Event/FetchEvent",
+        events: "Event/AdminFetchEvent",
         displayEventTime: false,
         eventRender: function(event, element, view) {
             if (event.allDay === 'true') {
@@ -25,7 +25,7 @@ $(document).ready(function() {
                 var start = $.fullCalendar.formatDate(start, "YYYY-MM-DD HH:mm:ss");
                 var end = $.fullCalendar.formatDate(end, "YYYY-MM-DD HH:mm:ss");
                 $.ajax({
-                    url: 'index.php/Event/AddEvent',
+                    url: 'Event/AddEvent',
                     data: 'title=' + title + '&start=' + start + '&end=' + end,
                     type: "POST",
                     success: function(data) {
@@ -51,7 +51,7 @@ $(document).ready(function() {
             var start = $.fullCalendar.formatDate(event.start, "YYYY-MM-DD HH:mm:ss");
             var end = $.fullCalendar.formatDate(event.end, "YYYY-MM-DD HH:mm:ss");
             $.ajax({
-                url: 'index.php/Event/DropEvent',
+                url: 'Event/DropEvent',
                 data: 'title=' + event.title + '&start=' + start + '&end=' + end + '&id=' + event.id,
                 type: "POST",
                 success: function(response) {
@@ -62,16 +62,16 @@ $(document).ready(function() {
             });
         },
         eventClick: function(event) {
-            var deleteMsg = confirm("Do you really want to delete?");
-            if (deleteMsg) {
+            var acceptMsg = confirm("Do you really want to accept?");
+            if (acceptMsg) {
                 $.ajax({
                     type: "POST",
-                    url: "index.php/Event/DelEvent",
+                    url: "Event/AcceptEvent",
                     data: "&id=" + event.id,
                     success: function(response) {
                         if (parseInt(response) > 0) {
                             $('#calendar').fullCalendar('removeEvents', event.id);
-                            displayMessage("Deleted Successfully");
+                            displayMessage("Accepted Successfully");
                         }
                     }
                 });
