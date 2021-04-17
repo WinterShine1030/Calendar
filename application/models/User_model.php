@@ -1,6 +1,5 @@
 <?php
 
-
 class User_model extends CI_Model
 {
     public function __construct()
@@ -8,7 +7,6 @@ class User_model extends CI_Model
         parent::__construct();
         $this->load->database();
     }
-
     public function AddInfo($values)
     {
         $query = $this->db->insert('schedule', $values);
